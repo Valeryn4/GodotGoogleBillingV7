@@ -1,3 +1,54 @@
+
+
+example use singletone:
+```gdscript
+
+var billing := Engine.get_singleton("GodotGoogleBilling")
+
+billing.build(non_consumables_list: Array, consumables_list: Array, subs_list: Array, license_key: String)
+billing.purchase(sku: String)
+billing.subscribe(sku: String)
+billing.unsubscribe(sku: String)
+
+#signals
+
+signal prices_in_app_update(info: Dictionary)
+# info data
+#{
+#        sku : String,
+#        type_product : Int,
+#        title: String,
+#        description: String,
+#        price: String,
+#        price_amount: Float,
+#        currency_code: String,
+#        billing_cycle_count: Int,
+#        billing_period: String,
+#        recurrence_mode: Int,
+#}
+
+
+signal product_purchased(transaction: Dictionary)
+signal product_restored(transaction: Dictionary)
+signal product_failed(transaction: Dictionary)
+#transaction data
+#{
+#        sku: String,
+#        type_product: Int,
+#        is_acknowledged: Boolean,
+#        is_auto_renewing: Boolean,
+#        purchase_state: Int,
+#        purchase_token: String,
+#        signature: String,
+#        package_name: String,
+#        response_code: Int, #OK
+#}
+
+```
+
+
+example use wrapper plugin
+
 ```gdscript
 extends Node
 
