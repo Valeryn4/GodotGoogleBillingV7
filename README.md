@@ -3,6 +3,9 @@
 example use singletone:
 ```gdscript
 
+const val TYPE_IN_APP = 0
+const val TYPE_SUBS = 3
+
 var billing := Engine.get_singleton("GodotGoogleBilling")
 
 billing.build(non_consumables_list: Array, consumables_list: Array, subs_list: Array, license_key: String)
