@@ -249,7 +249,7 @@ class GodotGoogleBilling(godot: Godot) : GodotPlugin(godot) {
                     dict["order_id"] = purchaseInfo.orderId
                     dict["json"] = purchaseInfo.originalJson
 
-                    emitSignal(godot, tag, signalProductRestored, dict)
+                    emitSignal(godot, tag, signalProductFailed, dict)
                 }
             }
         })
@@ -343,7 +343,7 @@ class GodotGoogleBilling(godot: Godot) : GodotPlugin(godot) {
                     dict["order_id"] = purchaseInfo.orderId
                     dict["json"] = purchaseInfo.originalJson
 
-                    emitSignal(godot, tag, signalProductRestored, dict)
+                    emitSignal(godot, tag, signalProductFailed, dict)
                 }
             }
         })
